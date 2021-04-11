@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "474384463898",
+    "project_id": "iris-fb5b6",
+    "storage_bucket": "iris-fb5b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474384463898:android:16dfca2d1dcb2bbfccf9a3",
+        "android_client_info": {
+          "package_name": "com.koven.iris"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474384463898-n4o04v6seuaqr71jrqu4be51q2gflbod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ssfW48pDHF9kewtJ9ZOmi4aZB0Kb794"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474384463898-n4o04v6seuaqr71jrqu4be51q2gflbod.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
