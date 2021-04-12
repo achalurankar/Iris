@@ -1,10 +1,12 @@
-package com.koven.iris;
+package com.koven.iris.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class UsersActivity extends AppCompatActivity {
+import com.koven.iris.R;
+
+public class Users extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

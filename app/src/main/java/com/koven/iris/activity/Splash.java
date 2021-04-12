@@ -1,4 +1,4 @@
-package com.koven.iris;
+package com.koven.iris.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+
+import com.koven.iris.R;
 
 public class Splash extends AppCompatActivity {
 
@@ -56,8 +57,8 @@ public class Splash extends AppCompatActivity {
             appNameLayout.setAnimation(appNameAnimation);
 
             new Handler().postDelayed(() -> {
-                startActivity(new Intent(Splash.this, UsersActivity.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(Splash.this, Register.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }, DURATION + 500);
         }, 400);
