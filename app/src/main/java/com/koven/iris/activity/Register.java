@@ -162,9 +162,9 @@ public class Register extends AppCompatActivity {
                             .addOnSuccessListener(uri -> {
                                 mPicUrl = uri.toString(); //received pic url
                                 HashMap<String, String> map = new HashMap<>(); //mapping for storing information into database
-                                map.put("userId", mUserId);
-                                map.put("username", mUsername);
-                                map.put("picUrl", mPicUrl);
+                                map.put(Constants.USER_ID, mUserId);
+                                map.put(Constants.USERNAME, mUsername);
+                                map.put(Constants.PIC_URL, mPicUrl);
                                 FirebaseFirestore.getInstance()
                                         .collection(Constants.USERS_COLLECTION)
                                         .document(mUserId)
