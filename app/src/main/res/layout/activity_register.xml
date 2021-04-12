@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activity.Register">
 
     <RelativeLayout
@@ -16,24 +17,24 @@
             android:id="@+id/profile_image"
             android:layout_width="110dp"
             android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
             android:scaleType="centerCrop"
             android:src="@drawable/user_vector"
             app:riv_border_color="@color/app_primary"
             app:riv_border_width="2dp"
             app:riv_corner_radius="30dp"
             app:riv_mutate_background="true"
-            android:layout_centerHorizontal="true"
             app:riv_oval="true" />
 
         <RelativeLayout
             android:layout_width="23dp"
             android:layout_height="23dp"
+            android:layout_below="@id/profile_image"
             android:layout_marginLeft="-28dp"
             android:layout_marginTop="-28dp"
-            android:padding="2dp"
+            android:layout_toEndOf="@id/profile_image"
             android:background="@drawable/add_image_bg"
-            android:layout_below="@id/profile_image"
-            android:layout_toEndOf="@id/profile_image">
+            android:padding="2dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -48,30 +49,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/profile_image"
-            android:hint="enter username..."
-            android:layout_marginTop="15dp"
-            android:textColorHint="@color/hint_color"
-            android:textColor="@color/text_color"
-            android:padding="15dp"
-            android:background="@drawable/username_et_bg"
             android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"/>
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/username_et_bg"
+            android:hint="enter username..."
+            android:padding="15dp"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_color" />
 
-        <Button
+        <TextView
             android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/username_et"
-            android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/submit_button_bg"
             android:layout_marginStart="25dp"
-            android:text="DONE"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
             android:alpha="0.45"
+            android:background="@drawable/submit_button_bg"
             android:clickable="false"
-            android:textSize="17sp"
-            android:textStyle="bold"
+            android:padding="14dp"
+            android:text="DONE"
+            android:textAlignment="center"
             android:textColor="@color/text_color"
-            android:layout_marginEnd="25dp"/>
+            android:textSize="17sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </RelativeLayout>

@@ -60,7 +60,9 @@ public class Users extends AppCompatActivity {
                             user.setUserId(documentSnapshot.get(Constants.USER_ID).toString());
                         if (documentSnapshot.get(Constants.PIC_URL) != null)
                             user.setPicUrl(documentSnapshot.get(Constants.PIC_URL).toString());
-                        mUsers.add(user);
+
+                        if (!user.getUserId().equals(Session.currentUser.getUserId()))
+                            mUsers.add(user);
                     }
                     if (mUsers.size() != 0) {
                         mAdapter = new CustomAdapter(Users.this, mUsers);
@@ -105,7 +107,7 @@ public class Users extends AppCompatActivity {
             holder.item.setOnClickListener(v -> {
                 Session.selectedUser = user;
                 startActivity(new Intent(getApplicationContext(), Chat.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
             });
         }
 

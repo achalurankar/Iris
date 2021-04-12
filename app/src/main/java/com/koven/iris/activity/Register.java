@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -46,7 +47,7 @@ public class Register extends AppCompatActivity {
      * image view for profile pic selection
      */
     private ImageView profileImage;
-    private Button registerBtn;
+    private TextView registerBtn;
     private EditText usernameET;
 
     /**
@@ -183,6 +184,7 @@ public class Register extends AppCompatActivity {
                                                 jsonObject.put(Constants.USER_ID, mUserId);
                                                 jsonObject.put(Constants.PIC_URL, mPicUrl);
                                                 String jsonString = jsonObject.toString();
+                                                Session.currentUser = new User("" + mUsername, "" + mUserId, "" + mPicUrl);
                                                 sharedPreferences.edit().putString(Constants.USER_INFO, jsonString).apply();
                                                 //redirect to users activity
                                                 startActivity(new Intent(getApplicationContext(), Users.class));
