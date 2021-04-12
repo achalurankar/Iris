@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.koven.iris.R;
+import com.koven.iris.modal.User;
 import com.koven.iris.util.Constants;
 import com.koven.iris.util.Session;
 
@@ -85,7 +86,11 @@ public class Register extends AppCompatActivity {
             JSONObject userObject;
             try {
                 userObject = new JSONObject(userInfo);
-                Session.user = userObject;
+                Session.currentUser = new User(
+                        "" + userObject.getString(Constants.USERNAME),
+                        "" + userObject.getString(Constants.USER_ID),
+                        "" + userObject.getString(Constants.PIC_URL)
+                );
                 startActivity(new Intent(getApplicationContext(), Users.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.koven.iris.R;
 import com.koven.iris.modal.User;
 import com.koven.iris.util.Constants;
+import com.koven.iris.util.Session;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -70,7 +72,7 @@ public class Users extends AppCompatActivity {
     }
 
 
-    public static class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
+    public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
         /**
          * Adapter member fields
@@ -101,7 +103,9 @@ public class Users extends AppCompatActivity {
             holder.username.setText(user.getUsername());
 
             holder.item.setOnClickListener(v -> {
-                Toast.makeText(mmContext, "clicked on " + user.getUsername(), Toast.LENGTH_SHORT).show();
+                Session.selectedUser = user;
+                startActivity(new Intent(getApplicationContext(), Chat.class));
+                overridePendingTransition(0,0);
             });
         }
 

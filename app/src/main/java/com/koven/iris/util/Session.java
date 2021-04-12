@@ -1,11 +1,16 @@
 package com.koven.iris.util;
 
-import org.json.JSONObject;
+import com.koven.iris.modal.User;
 
 public class Session {
 
     /**
      *  Currently register user json object for app usage
      * */
-    public static JSONObject user;
+    public static User currentUser;
+
+    /**
+     *  Selected user from user list activity
+     * */
+    public static User selectedUser;
 }
